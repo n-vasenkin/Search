@@ -1,0 +1,11 @@
+node_modules/
+
+.vscode/*
+.idea/*
+
+*.orig
+*.log
+
+.DS_Store
+.AppleDouble
+.LSOverride

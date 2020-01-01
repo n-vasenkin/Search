@@ -1,0 +1,90 @@
+{
+  "name": "Bash",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "cross-env NODE_ENV=local webpack-dev-server --config ./config/webpack.config.js --progress --color",
+    "build": "webpack --config ./config/webpack.config.js",
+    "test": "jest",
+    "pre-commit": "lint-staged",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage",
+    "lint-typescript": "tslint -c ./tslint.staged.json -p ./tsconfig.json -t verbose"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts?(x)": [
+      "npm run lint-typescript",
+      "git add"
+    ]
+  },
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
+  "dependencies": {
+    "@types/node": "^12.6.9",
+    "@types/react": "^16.8.24",
+    "@types/react-dom": "^16.8.5",
+    "@types/react-router-dom": "^4.3.4",
+    "awesome-typescript-loader": "^5.2.1",
+    "axios": "^0.19.0",
+    "computed-async-mobx": "^4.1.1",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.1.0",
+    "dayjs": "^1.8.15",
+    "favicons-webpack-plugin": "^0.0.9",
+    "file-loader": "^4.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mobx": "^5.13.0",
+    "mobx-react": "^6.1.1",
+    "mobx-utils": "^5.4.1",
+    "raw-loader": "^1.x.x",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^4.x.x",
+    "reflect-metadata": "^0.1.13",
+    "remove-webpack-plugin": "^1.2.2",
+    "sanitize.css": "^11.0.0",
+    "serializr": "^1.5.1",
+    "style-loader": "^0.23.1",
+    "styled-components": "^4.3.2",
+    "typescript": "^3.5.3",
+    "typescript-ioc": "^1.2.5",
+    "typescript-plugin-styled-components": "^1.4.3",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  },
+  "devDependencies": {
+    "@types/autosize": "^3.0.6",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.17",
+    "@types/react-datepicker": "^2.8.1",
+    "@types/react-input-mask": "^2.0.3",
+    "@types/react-tooltip": "^3.9.3",
+    "@types/styled-components": "^4.1.18",
+    "@types/uuid": "^3.4.5",
+    "babel-jest": "^23.x.x",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
+    "git": "^0.1.5",
+    "husky": "^3.0.3",
+    "jest": "^23.x.x",
+    "lint-staged": "^9.2.1",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^4.0.0",
+    "cross-env": "^5.2.0",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
