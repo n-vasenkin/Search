@@ -5,5 +5,5 @@ export default styled.div`
   align-items: center;
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 25px;
 `;
