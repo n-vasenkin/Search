@@ -1,4 +1,4 @@
-import { Container as _Container } from 'components';
+import { Container as _Container, RawSvg as _RawSvg } from 'components';
 import { COLORS } from 'const';
 import { Link as _Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -38,9 +38,14 @@ export const Menu = styled.div`
   display: flex;
   flex: 1;
   align-items: center;
-  > img {
-    width: 24px;
-    height: 24px;
-    color: #fff;
+  margin-left: 10px;
+`;
+
+export const RawSvg = styled(_RawSvg)`
+  color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
+  :hover {
+    color: #33b5e5;
   }
 `;
