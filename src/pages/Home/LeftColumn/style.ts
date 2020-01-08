@@ -1,11 +1,9 @@
+import { Block } from 'components';
 import styled from 'styled-components';
 
-export const Profile = styled.div`
+export const Profile = styled(Block)`
   position: relative;
-  display: flex;
   flex-direction: column;
-  border: 1px solid #9ebabe;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
 `;
 
 export const ProfileBackground = styled.div`

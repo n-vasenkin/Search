@@ -1,4 +1,5 @@
 export default {
-  WHITE: '#fff',
-  TEXT: '#838a92'
+  BORDER: '#9ebabe',
+  TEXT: '#838a92',
+  WHITE: '#fff'
 };

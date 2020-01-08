@@ -33,8 +33,8 @@ export default class MainHeader extends React.Component {
             </nav>
           </Main>
           <Menu>
-            <RawSvg icon="bug" />
-            <RawSvg icon="settings" />
+            <RawSvg icon="header/bug" />
+            <RawSvg icon="header/settings" />
             <Button view={StyleView.PRIMARY}>Вход</Button>
           </Menu>
         </Container>
