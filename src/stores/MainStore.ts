@@ -1,3 +1,4 @@
+import { PagesNames } from 'const/routers';
 import { action, computed, observable } from 'mobx';
 import { Singleton } from 'typescript-ioc';
 
@@ -11,6 +12,8 @@ export default class MainStore {
 
   @action.bound
   changeCurrentPage(page: string): void {
+    if (this.currentPage === page) return;
     this._currentPage = page;
+    document.title = PagesNames[page];
   }
 }

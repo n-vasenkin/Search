@@ -6,6 +6,9 @@ import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { MainStore } from 'stores';
 import { Inject } from 'typescript-ioc';
+import Content from './Content';
+import LeftColumn from './LeftColumn';
+import RightColumn from './RightColumn';
 
 @observer
 export default class PageHome extends React.Component<RouteComponentProps> {
@@ -27,6 +30,6 @@ export default class PageHome extends React.Component<RouteComponentProps> {
   }
 
   render(): JSX.Element {
-    return <Layout leftColumn={<h1>Left</h1>} content={this.content} rightColumn={<h1>Right</h1>} />;
+    return <Layout leftColumn={<LeftColumn />} content={<Content />} rightColumn={<RightColumn />} />;
   }
 }
