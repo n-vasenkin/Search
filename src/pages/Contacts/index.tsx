@@ -1,5 +1,4 @@
 import { ConstRouter } from 'const/routers';
-import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
@@ -12,7 +11,7 @@ export default class PageTest extends React.Component<RouteComponentProps> {
   @Inject private constRouter: ConstRouter;
 
   componentDidMount(): void {
-    this.mainStore.changeCurrentPage(this.constRouter.TEST_ROOT);
+    this.mainStore.changeCurrentPage(this.constRouter.CONTACTS_ROOT);
   }
 
   render(): JSX.Element {

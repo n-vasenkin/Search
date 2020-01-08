@@ -26,7 +26,7 @@ export const Logo = styled.span`
 export const Link = styled(_Link)`
   margin: 0 20px 0 0;
   text-decoration: none;
-  color: ${(props: { active?: boolean }) => (props.active ? '#fff' : COLORS.TEXT)};
+  color: ${({ selected }: { selected?: boolean }) => (selected ? '#fff' : COLORS.TEXT)};
 `;
 
 export const Main = styled.div`

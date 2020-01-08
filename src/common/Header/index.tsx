@@ -1,5 +1,5 @@
 import { Button } from 'components';
-import { ConstRouter, Pages, PagesNames } from 'const/routers';
+import { Pages, PagesNames } from 'const/routers';
 import { StyleView } from 'const/style';
 import { observer } from 'mobx-react';
 import React from 'react';
@@ -9,8 +9,8 @@ import { Container, Header, Link, Logo, Main, Menu, RawSvg } from './style';
 
 @observer
 export default class MainHeader extends React.Component {
+  private headerNav: Array<Pages> = [Pages.MAIN_ROOT, Pages.CONTACTS_ROOT];
   @Inject private mainStore: MainStore;
-  @Inject private constRouter: ConstRouter;
 
   private get currentPage(): string {
     return this.mainStore.currentPage;
@@ -23,11 +23,10 @@ export default class MainHeader extends React.Component {
           <Main>
             <Logo>Search</Logo>
             <nav>
-              {Object.keys(Pages).map((page, index) => {
-                const isActivePage = this.currentPage === this.constRouter[page];
+              {this.headerNav.map(page => {
                 return (
-                  <Link to={this.constRouter[page]} active={!!isActivePage} key={index}>
-                    {PagesNames[Pages[page]]}
+                  <Link to={page} selected={this.currentPage === page} key={page}>
+                    {PagesNames[page]}
                   </Link>
                 );
               })}
