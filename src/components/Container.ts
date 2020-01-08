@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export default styled.div`
   display: flex;
-  align-items: center;
-  max-width: 1140px;
+  max-width: 1128px;
   margin: 0 auto;
-  padding: 0 25px;
+  padding: 0 30px;
 `;

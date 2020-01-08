@@ -4,11 +4,11 @@ import { Link as _Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Header = styled.header`
+  position: fixed;
   display: flex;
   align-items: center;
   color: #fff;
   height: 48px;
-  margin-bottom: 20px;
   background: #303b44;
 `;
 

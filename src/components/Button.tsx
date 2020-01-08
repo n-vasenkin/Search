@@ -1,4 +1,4 @@
-import { BobrView } from 'const/style';
+import { StyleView } from 'const/style';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -9,7 +9,7 @@ const Button = styled.button`
   padding: 6px 12px;
   cursor: pointer;
   transition: 0.2;
-  ${({ view }: { view: BobrView }) => {
+  ${({ view }: { view: StyleView }) => {
     const styleButton = {
       background: '',
       borderColor: 'transparent',
@@ -23,14 +23,14 @@ const Button = styled.button`
     };
 
     switch (view) {
-      case BobrView.PRIMARY:
+      case StyleView.PRIMARY:
         styleButton.background = '#fff';
         styleButton.color = '#a4afba';
         styleButton.borderColor = '#838a92';
         hoverButton.color = '#65a3be';
         hoverButton.borderColor = '#65a3be';
         break;
-      case BobrView.SECONDARY:
+      case StyleView.SECONDARY:
         styleButton.background = '#65a3be';
         styleButton.color = '#fff';
         hoverButton.background = 'rgba(61, 144, 190, 0.93)';
@@ -51,4 +51,4 @@ const Button = styled.button`
   }}
 `;
 
-export default ({ children, view }: { children: string; view?: BobrView }) => <Button view={view}>{children}</Button>;
+export default ({ children, view }: { children: string; view?: StyleView }) => <Button view={view}>{children}</Button>;

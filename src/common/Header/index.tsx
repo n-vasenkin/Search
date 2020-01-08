@@ -1,6 +1,6 @@
 import { Button } from 'components';
 import { ConstRouter, Pages, PagesNames } from 'const/routers';
-import { BobrView } from 'const/style';
+import { StyleView } from 'const/style';
 import { observer } from 'mobx-react';
 import React from 'react';
 import { MainStore } from 'stores';
@@ -21,7 +21,7 @@ export default class MainHeader extends React.Component {
       <Header>
         <Container>
           <Main>
-            <Logo>Bash</Logo>
+            <Logo>Search</Logo>
             <nav>
               {Object.keys(Pages).map((page, index) => {
                 const isActivePage = this.currentPage === this.constRouter[page];
@@ -36,7 +36,7 @@ export default class MainHeader extends React.Component {
           <Menu>
             <RawSvg icon="bug" />
             <RawSvg icon="settings" />
-            <Button view={BobrView.PRIMARY}>Вход</Button>
+            <Button view={StyleView.PRIMARY}>Вход</Button>
           </Menu>
         </Container>
       </Header>

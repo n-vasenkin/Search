@@ -1,4 +1,5 @@
-import { Footer, Header } from 'common';
+import { Header } from 'common';
+import { Container } from 'components';
 import { ConstRouter } from 'const/routers';
 import 'globalCss.css';
 import PageHome from 'pages/Home';
@@ -8,12 +9,10 @@ import { Route, Router, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import { Inject } from 'typescript-ioc';
 
-const Main = styled.main`
-  min-height: 100vh;
+const Main = styled(Container)`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  padding: calc(48px + 15px) 30px 0 30px;
 `;
 
 export default class AppRouter extends React.PureComponent {
@@ -23,14 +22,15 @@ export default class AppRouter extends React.PureComponent {
     return (
       <>
         <Router history={this.constRouter.history}>
-          <Main>
+          <>
             <Header />
-            <Switch>
-              <Route exact path={this.constRouter.MAIN_ROOT} component={PageHome} />
-              <Route exact path={this.constRouter.TEST_ROOT} component={PageTest} />
-            </Switch>
-            <Footer />
-          </Main>
+            <Main>
+              <Switch>
+                <Route exact path={this.constRouter.MAIN_ROOT} component={PageHome} />
+                <Route exact path={this.constRouter.TEST_ROOT} component={PageTest} />
+              </Switch>
+            </Main>
+          </>
         </Router>
       </>
     );

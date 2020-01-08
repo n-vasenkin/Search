@@ -1,3 +1,4 @@
+import { Layout } from 'common';
 import { ConstRouter } from 'const/routers';
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
@@ -26,6 +27,6 @@ export default class PageHome extends React.Component<RouteComponentProps> {
   }
 
   render(): JSX.Element {
-    return <main>{this.content}</main>;
+    return <Layout leftColumn={<h1>Left</h1>} content={this.content} rightColumn={<h1>Right</h1>} />;
   }
 }
