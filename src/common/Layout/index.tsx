@@ -15,9 +15,9 @@ export default class Layout extends React.Component<ILayoutProps> {
     const { leftColumn, content, rightColumn } = this.props;
     return (
       <Main>
-        <LeftColumn>{leftColumn}</LeftColumn>
+        {leftColumn && <LeftColumn>{leftColumn}</LeftColumn>}
         <Content>{content}</Content>
-        <RightColumn>{rightColumn}</RightColumn>
+        {rightColumn && <RightColumn>{rightColumn}</RightColumn>}
       </Main>
     );
   }

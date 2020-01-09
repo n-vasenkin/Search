@@ -7,6 +7,7 @@ import { MainStore } from 'stores';
 import { Inject } from 'typescript-ioc';
 import Content from './Content';
 import LeftColumn from './LeftColumn';
+import RightColumn from './RightColumn';
 
 @observer
 export default class PageContacts extends React.Component<RouteComponentProps> {
@@ -18,6 +19,6 @@ export default class PageContacts extends React.Component<RouteComponentProps> {
   }
 
   render(): JSX.Element {
-    return <Layout leftColumn={<LeftColumn />} content={<Content />} />;
+    return <Layout leftColumn={<LeftColumn />} content={<Content />} rightColumn={<RightColumn />} />;
   }
 }

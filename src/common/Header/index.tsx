@@ -1,6 +1,6 @@
 import { Button } from 'components';
+import { STYLE_VIEW } from 'const';
 import { Pages, PagesNames } from 'const/routers';
-import { StyleView } from 'const/style';
 import { observer } from 'mobx-react';
 import React from 'react';
 import { MainStore } from 'stores';
@@ -35,7 +35,7 @@ export default class MainHeader extends React.Component {
           <Menu>
             <RawSvg icon="header/bug" />
             <RawSvg icon="header/settings" />
-            <Button view={StyleView.PRIMARY}>Вход</Button>
+            <Button view={STYLE_VIEW.PRIMARY}>Вход</Button>
           </Menu>
         </Container>
       </Header>

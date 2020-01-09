@@ -1,5 +1,9 @@
-import { Block } from 'components';
+import { Avatar as _Avatar, Block } from 'components';
 import styled from 'styled-components';
+
+export const Avatar = styled(_Avatar)`
+  top: 20px;
+`;
 
 export const Profile = styled(Block)`
   position: relative;
@@ -9,18 +13,6 @@ export const Profile = styled(Block)`
 export const ProfileBackground = styled.div`
   height: 50px;
   background: #c2c;
-`;
-
-export const ProfileAvatar = styled.div`
-  position: absolute;
-  height: 60px;
-  width: 60px;
-  border: 1px solid #000;
-  border-radius: 50%;
-  background: #33b5e5;
-  left: 50%;
-  top: 20px;
-  transform: translateX(-30px);
 `;
 
 export const ProfileName = styled.h3`

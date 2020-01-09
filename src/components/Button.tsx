@@ -1,4 +1,4 @@
-import { StyleView } from 'const/style';
+import { STYLE_VIEW } from 'const';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -9,7 +9,7 @@ const Button = styled.button`
   padding: 6px 12px;
   cursor: pointer;
   transition: 0.2;
-  ${({ view }: { view: StyleView }) => {
+  ${({ view }: { view: STYLE_VIEW }) => {
     const styleButton = {
       background: '',
       borderColor: 'transparent',
@@ -23,14 +23,14 @@ const Button = styled.button`
     };
 
     switch (view) {
-      case StyleView.PRIMARY:
+      case STYLE_VIEW.PRIMARY:
         styleButton.background = '#fff';
         styleButton.color = '#a4afba';
         styleButton.borderColor = '#838a92';
         hoverButton.color = '#65a3be';
         hoverButton.borderColor = '#65a3be';
         break;
-      case StyleView.SECONDARY:
+      case STYLE_VIEW.SECONDARY:
         styleButton.background = '#65a3be';
         styleButton.color = '#fff';
         hoverButton.background = 'rgba(61, 144, 190, 0.93)';
@@ -51,4 +51,4 @@ const Button = styled.button`
   }}
 `;
 
-export default ({ children, view }: { children: string; view?: StyleView }) => <Button view={view}>{children}</Button>;
+export default ({ children, view }: { children: string; view?: STYLE_VIEW }) => <Button view={view}>{children}</Button>;
