@@ -21,7 +21,7 @@ time, mark, audio, video {
     line-height: normal;
 }
 article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section { display: block }
+footer, header, hgroup, menu, nav, section, img { display: block }
 a,input,textarea,button{ outline: none!important; background: transparent; border: 0; }
 html{ height: 100% }
 body { line-height: 1 }
@@ -46,9 +46,8 @@ a{
 	outline: none!important
 }
 
-img,
-.home__time_panel span,
-.tab_panel span{
+img {
+    width: 100%;
     -ms-user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;

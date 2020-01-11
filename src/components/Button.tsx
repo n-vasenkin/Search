@@ -15,7 +15,6 @@ const Button = styled.button`
       borderColor: 'transparent',
       color: ''
     };
-
     const hoverButton = {
       background: '',
       borderColor: 'transparent',

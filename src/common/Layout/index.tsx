@@ -1,4 +1,3 @@
-import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 import React from 'react';
 import { Content, LeftColumn, Main, RightColumn } from './style';

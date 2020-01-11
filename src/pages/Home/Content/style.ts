@@ -1,3 +1,4 @@
+import { Block } from 'components';
 import { COLORS } from 'const';
 import styled from 'styled-components';
 

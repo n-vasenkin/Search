@@ -5,6 +5,7 @@ import styled, { css } from 'styled-components';
 interface AvatarProps {
   className?: string;
   size?: SIZE;
+  reset?: boolean;
 }
 
 const Avatar = styled.div`
@@ -13,7 +14,7 @@ const Avatar = styled.div`
   justify-content: center;
   color: #fff;
   font-weight: bold;
-  position: absolute;
+  position: ${({ reset }: AvatarProps) => (reset ? 'static' : 'absolute')};
   background: #33b5e5;
   border-radius: 50%;
   border-color: #fff;
@@ -26,9 +27,11 @@ const Avatar = styled.div`
       case SIZE.EXTRA_SMALL:
         break;
       case SIZE.SMALL:
+        _size = 50;
+        _borderWidth = 2;
         break;
       case SIZE.MIDDLE:
-        _size = 60;
+        _size = 65;
         _borderWidth = 2;
         break;
 
@@ -40,18 +43,13 @@ const Avatar = styled.div`
       height: ${_size}px;
       width: ${_size}px;
       border-width: ${_borderWidth}px;
-      transform: translateX(${_size / -2}px);
+      transform: ${({ reset }: AvatarProps) => (reset ? 'none' : `translateX(${_size / -2}px)`)};
     `;
   }};
 `;
 
 export default class extends React.Component<AvatarProps> {
   render(): JSX.Element {
-    const { size, className } = this.props;
-    return (
-      <Avatar size={size} className={className}>
-        ВН
-      </Avatar>
-    );
+    return <Avatar {...this.props}>ВН</Avatar>;
   }
 }

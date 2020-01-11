@@ -10,6 +10,7 @@ export const Header = styled.header`
   color: #fff;
   height: 48px;
   background: #303b44;
+  z-index: 99999;
 `;
 
 export const Container = styled(_Container)`

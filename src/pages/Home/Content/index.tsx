@@ -1,3 +1,4 @@
+import { News } from 'common';
 import { Block, RawSvg } from 'components';
 import React from 'react';
 import { BtnCreateNews, IconCreateNews } from './style';
@@ -20,7 +21,21 @@ export default class Content extends React.Component {
     );
   }
 
+  private get newsList(): JSX.Element {
+    return (
+      <div>
+        <News />
+        <News />
+      </div>
+    );
+  }
+
   render(): JSX.Element {
-    return <>{this.createNews}</>;
+    return (
+      <>
+        {this.createNews}
+        {this.newsList}
+      </>
+    );
   }
 }

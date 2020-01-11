@@ -6,8 +6,9 @@ export const Avatar = styled(_Avatar)`
 `;
 
 export const Profile = styled(Block)`
-  position: relative;
+  position: sticky;
   flex-direction: column;
+  top: calc(48px + 15px);
 `;
 
 export const ProfileBackground = styled.div`
