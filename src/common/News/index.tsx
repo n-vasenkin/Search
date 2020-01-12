@@ -1,7 +1,20 @@
 // tslint:disable:max-classes-per-file
+import { Avatar } from 'components';
 import { SIZE } from 'const';
 import React from 'react';
-import { ActionButton, ActionPanel, Avatar, Container, Header, Images, RawSvg, Statistics, Text } from './style';
+import {
+  ActionButton,
+  ActionPanel,
+  AuthorAvatar,
+  CommentArea,
+  Container,
+  CreateComment,
+  Header,
+  Images,
+  RawSvg,
+  Statistics,
+  Text
+} from './style';
 
 class ActionItem extends React.Component<{ icon: string; children?: any }> {
   render(): JSX.Element {
@@ -19,7 +32,7 @@ export default class extends React.Component {
     return (
       <Container>
         <Header>
-          <Avatar size={SIZE.SMALL} reset />
+          <AuthorAvatar size={SIZE.SMALL} reset />
         </Header>
         <Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sequi nulla voluptatibus consequatur voluptatum,
@@ -40,6 +53,10 @@ export default class extends React.Component {
           <ActionItem icon="common/comment">Комментировать</ActionItem>
           <ActionItem icon="common/share">Поделиться</ActionItem>
         </ActionPanel>
+        <CreateComment>
+          <Avatar reset size={SIZE.EXTRA_SMALL} />
+          <CommentArea placeholder="Добавить комментарий..." />
+        </CreateComment>
       </Container>
     );
   }

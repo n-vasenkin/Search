@@ -25,6 +25,8 @@ const Avatar = styled.div`
     let _borderWidth;
     switch (size) {
       case SIZE.EXTRA_SMALL:
+        _size = 35;
+        _borderWidth = 1;
         break;
       case SIZE.SMALL:
         _size = 50;

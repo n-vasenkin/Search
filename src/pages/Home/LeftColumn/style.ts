@@ -6,9 +6,8 @@ export const Avatar = styled(_Avatar)`
 `;
 
 export const Profile = styled(Block)`
-  position: sticky;
+  position: relative;
   flex-direction: column;
-  top: calc(48px + 15px);
 `;
 
 export const ProfileBackground = styled.div`
@@ -20,4 +19,11 @@ export const ProfileName = styled.h3`
   padding: 40px 0 20px 0;
   text-align: center;
   font-weight: bold;
+`;
+
+export const Settings = styled(Block)`
+  position: sticky;
+  flex-direction: column;
+  margin-top: 15px;
+  top: calc(48px + 15px);
 `;

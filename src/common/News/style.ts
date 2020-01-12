@@ -1,4 +1,4 @@
-import { Avatar as _Avatar, Block, RawSvg as _RawSvg } from 'components';
+import { Avatar, Block, RawSvg as _RawSvg } from 'components';
 import { COLORS } from 'const';
 import styled from 'styled-components';
 
@@ -13,7 +13,7 @@ export const Header = styled.div`
   margin-top: 15px;
 `;
 
-export const Avatar = styled(_Avatar)``;
+export const AuthorAvatar = styled(Avatar)``;
 
 export const Content = styled.div`
   display: flex;
@@ -63,4 +63,18 @@ export const ActionButton = styled.div`
 
 export const RawSvg = styled(_RawSvg)`
   margin-right: 10px;
+`;
+
+export const CreateComment = styled.div`
+  display: flex;
+  margin-bottom: 15px;
+`;
+
+export const CommentArea = styled.textarea`
+  border-radius: 15px;
+  border: 1px solid ${COLORS.TEXT};
+  margin-left: 10px;
+  width: 100%;
+  flex: 1;
+  padding: 0 10px;
 `;

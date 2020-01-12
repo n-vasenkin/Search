@@ -1,17 +1,19 @@
 import { SIZE } from 'const';
 import React from 'react';
-import { Avatar, Profile, ProfileBackground, ProfileName } from './style';
+import { Avatar, Profile, ProfileBackground, ProfileName, Settings } from './style';
 
 export default class LeftColumn extends React.Component {
   private get profile(): JSX.Element {
     return (
       <>
-        <span />
         <Profile>
           <ProfileBackground />
           <Avatar size={SIZE.MIDDLE} />
           <ProfileName>Nikolay</ProfileName>
         </Profile>
+        <Settings>
+          <ProfileName>Какие-то настройки</ProfileName>
+        </Settings>
       </>
     );
   }
