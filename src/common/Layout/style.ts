@@ -1,8 +1,10 @@
+import { Container } from 'components';
 import styled from 'styled-components';
 
-export const Main = styled.div`
+export const Main = styled(Container)`
   display: flex;
   justify-content: space-between;
+  padding: calc(48px + 15px) 30px 0 30px;
 `;
 
 export const LeftColumn = styled.div`

@@ -17,7 +17,7 @@ export const Container = styled(_Container)`
   justify-content: space-between;
 `;
 
-export const Logo = styled.span`
+export const Logo = styled(_Link)`
   font-size: 28px;
   font-weight: bold;
   color: #fff;

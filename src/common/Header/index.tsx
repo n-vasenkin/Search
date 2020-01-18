@@ -21,7 +21,7 @@ export default class MainHeader extends React.Component {
       <Header>
         <Container>
           <Main>
-            <Logo>Search</Logo>
+            <Logo to="/">Search</Logo>
             <nav>
               {this.headerNav.map(page => {
                 return (
@@ -35,7 +35,9 @@ export default class MainHeader extends React.Component {
           <Menu>
             <RawSvg icon="header/bug" />
             <RawSvg icon="header/settings" />
-            <Button view={STYLE_VIEW.PRIMARY}>Вход</Button>
+            <Button view={STYLE_VIEW.PRIMARY} link="/auth">
+              Вход
+            </Button>
           </Menu>
         </Container>
       </Header>

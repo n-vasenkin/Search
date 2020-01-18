@@ -1,5 +1,6 @@
 import { STYLE_VIEW } from 'const';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 const Button = styled.button`
@@ -50,4 +51,22 @@ const Button = styled.button`
   }}
 `;
 
-export default ({ children, view }: { children: string; view?: STYLE_VIEW }) => <Button view={view}>{children}</Button>;
+interface ButtonProps {
+  children?: string;
+  view?: STYLE_VIEW;
+  link?: string;
+}
+
+export default class extends React.Component<ButtonProps> {
+  render(): JSX.Element {
+    const { children, view, link } = this.props;
+    if (link) {
+      return (
+        <Link to={link}>
+          <Button view={view}>{children}</Button>
+        </Link>
+      );
+    }
+    return <Button view={view}>{children}</Button>;
+  }
+}
