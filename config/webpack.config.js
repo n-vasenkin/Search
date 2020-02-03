@@ -1,24 +1,15 @@
 const path = require('path');
+
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const RemoveWebpackPlugin = require('remove-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const styledComponentsTransformer = require('typescript-plugin-styled-components').default;
 
 const rootPath = process.cwd();
 const resolvePath = path.resolve.bind(rootPath);
-
-const devLoaders = [
-  {
-    loader: 'awesome-typescript-loader',
-    options: {
-      getCustomTransformers: () => ({
-        before: [styledComponentsTransformer()]
-      })
-    }
-  }
-];
 
 const config = {
   devtool: 'source-map',
@@ -26,8 +17,8 @@ const config = {
   output: {
     path: path.resolve(__dirname, '..', 'build'),
     filename: 'static/js/[name].[hash:8].js',
-    publicPath: '/',
-    chunkFilename: 'static/js/[name].[hash:8].chunk.js'
+    chunkFilename: 'static/js/[name].[hash:8].js',
+    publicPath: '/'
   },
 
   resolve: {
@@ -45,11 +36,29 @@ const config = {
         test: /\.tsx?$/,
         include: resolvePath('src'),
         exclude: /node_modules/,
-        use: devLoaders
+        use: [
+          'thread-loader',
+          {
+            loader: 'ts-loader',
+            options: {
+              getCustomTransformers: () => ({
+                before: [styledComponentsTransformer()]
+              }),
+              happyPackMode: true
+            }
+          }
+        ]
       },
       {
         test: /\.(pik-icon|raw)\.svg$/,
-        use: 'raw-loader'
+        use: [
+          {
+            loader: 'raw-loader',
+            options: {
+              esModule: false
+            }
+          }
+        ]
       },
       {
         test: [/\.gif$/, /\.png$/, /^((?!(pik-icon|raw)).)*\.svg$/],
@@ -74,7 +83,12 @@ const config = {
     ]
   },
 
+  stats: {
+    warningsFilter: /export .* was not found in/
+  },
+
   plugins: [
+    new HardSourceWebpackPlugin(),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '..', 'public'),

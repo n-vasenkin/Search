@@ -1,6 +1,6 @@
 import { Container as _Container, RawSvg as _RawSvg } from 'components';
 import { COLORS } from 'const';
-import { Link as _Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Header = styled.header`
@@ -17,14 +17,14 @@ export const Container = styled(_Container)`
   justify-content: space-between;
 `;
 
-export const Logo = styled(_Link)`
+export const Logo = styled(Link)`
   font-size: 28px;
   font-weight: bold;
   color: #fff;
   margin-right: 30px;
 `;
 
-export const Link = styled(_Link)`
+export const Item = styled(Link)`
   margin: 0 20px 0 0;
   text-decoration: none;
   color: ${({ selected }: { selected?: boolean }) => (selected ? '#fff' : COLORS.TEXT)};

@@ -1,14 +1,15 @@
 import { STYLE_VIEW } from 'const';
+import React from 'react';
 import styled, { css } from 'styled-components';
 
-export default styled.button`
-  font-size: 13px;
-  border: 1px solid;
+export default styled.input`
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #333;
   border-radius: 3px;
-  padding: 6px 12px;
-  cursor: pointer;
+  padding: 8px 12px;
   transition: 0.2;
-  ${({ view }: { view: STYLE_VIEW }) => {
+  /* ${({ view }: { view: STYLE_VIEW }) => {
     const styleButton = {
       background: '',
       borderColor: 'transparent',
@@ -46,5 +47,5 @@ export default styled.button`
         border-color: ${hoverButton.borderColor};
       }
     `;
-  }}
+  }} */
 `;

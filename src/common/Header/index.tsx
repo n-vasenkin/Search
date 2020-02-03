@@ -3,9 +3,10 @@ import { STYLE_VIEW } from 'const';
 import { Pages, PagesNames } from 'const/routers';
 import { observer } from 'mobx-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MainStore } from 'stores';
 import { Inject } from 'typescript-ioc';
-import { Container, Header, Link, Logo, Main, Menu, RawSvg } from './style';
+import { Container, Header, Item, Logo, Main, Menu, RawSvg } from './style';
 
 @observer
 export default class MainHeader extends React.Component {
@@ -25,9 +26,9 @@ export default class MainHeader extends React.Component {
             <nav>
               {this.headerNav.map(page => {
                 return (
-                  <Link to={page} selected={this.currentPage === page} key={page}>
+                  <Item to={page} selected={this.currentPage === page} key={page}>
                     {PagesNames[page]}
-                  </Link>
+                  </Item>
                 );
               })}
             </nav>
@@ -35,9 +36,9 @@ export default class MainHeader extends React.Component {
           <Menu>
             <RawSvg icon="header/bug" />
             <RawSvg icon="header/settings" />
-            <Button view={STYLE_VIEW.PRIMARY} link="/auth">
-              Вход
-            </Button>
+            <Link to={Pages.AUTH_ROOT}>
+              <Button view={STYLE_VIEW.PRIMARY}>Вход</Button>
+            </Link>
           </Menu>
         </Container>
       </Header>

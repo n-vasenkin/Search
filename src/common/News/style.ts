@@ -42,7 +42,7 @@ export const Statistics = styled.ol`
 
 export const ActionPanel = styled.div`
   display: flex;
-  padding: 5px 0;
+  padding: 5px 0 10px 0;
 `;
 
 export const ActionButton = styled.div`
@@ -56,8 +56,7 @@ export const ActionButton = styled.div`
   transition: 0.2s;
   border-radius: 8px;
   :hover {
-    background: #334;
-    color: #fff;
+    color: #334;
   }
 `;
 
